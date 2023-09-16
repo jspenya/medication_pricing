@@ -1,0 +1,27 @@
+# == Schema Information
+#
+# Table name: drugs
+#
+#  id         :bigint           not null, primary key
+#  form       :string
+#  name       :string
+#  quantity   :decimal(, )
+#  strength   :string
+#  unit       :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
+one:
+  name: MyString
+  form: MyString
+  strength: MyString
+  unit: MyString
+  quantity: 9.99
+
+two:
+  name: MyString
+  form: MyString
+  strength: MyString
+  unit: MyString
+  quantity: 9.99

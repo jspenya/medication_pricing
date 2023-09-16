@@ -1,0 +1,20 @@
+<h1 class="text-3xl font-bold text-sky-500">Medication Pricing</h1>
+<i class="fa-regular fa-bell"></i>
+<div class="mt-5 flex gap-4">
+  <%= turbo_frame_tag "search_results" do %>
+  <%= form_with(url: search_results_home_index_path, method: "post", class: "flex items-center gap-2") do |form| %>
+    <div class="field" data-controller="autocomplete" data-autocomplete-url-value="<%= prescriptions_autocomplete_home_index_url %>">
+      <%= form.text_field :prescription, class: "rounded", placeholder: "Prescription", data: { autocomplete_target: "input" } %>
+      <%= form.hidden_field :prescription_id %>
+      <%= form.text_field :zip_code, class: "rounded", placeholder: "ZIP code" %>
+      <ul class="list-group absolute px-3 bg-slate-100 w-72" data-autocomplete-target="results"></ul>
+    </div>
+    <div class="actions">
+      <%= form.submit "Search", class: "px-5 py-2 bg-green-600 rounded text-white" %>
+    </div>
+  <% end %>
+  <% end %>
+</div>
+
+<%= render "search_results" %>
+<%#= turbo_frame_tag "search_results" %>
